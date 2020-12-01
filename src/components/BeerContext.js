@@ -20,13 +20,13 @@ export const BeerProvider = (props) => {
 
 
     return (
-        <>
-
+        <BeerContext.Provider value={"Mucenic Alexandru"}>
+            {props.children}
             {/*<h1>BEER LIST : </h1>*/}
             {/*{beerData.map(beer => {*/}
             {/*    return <h1>{beer.name}</h1>*/}
             {/*})}*/}
-        </>
+        </BeerContext.Provider>
     );
 
 
