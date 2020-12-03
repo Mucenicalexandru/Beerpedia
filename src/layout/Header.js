@@ -20,6 +20,8 @@ function Header(props) {
                     <Button type="button" className="btn btn-outline-primary"><Link to="/"> Home </Link></Button>
                     <Button type="button" className="btn btn-outline-primary"><Link to="/beers"> Link to see the beers </Link></Button>
                     <Button type="button" className="btn btn-outline-primary"><Link to="/beerOfTheDay">Beer of the day</Link></Button>
+                    <Button type="button" className="btn btn-outline-primary"><Link to="/categories">Beer Categories</Link></Button>
+                    <Button type="button" className="btn btn-outline-primary"><Link to="/glasses">Glassware</Link></Button>
                     <Search/>
                 </div>
             </header>

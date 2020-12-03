@@ -1,6 +1,15 @@
 import React, {useEffect, useState, createContext, useContext} from 'react';
 import axios from 'axios';
+import styled from "styled-components";
 
+const ButtonStyle = styled.a`
+  cursor: pointer;
+`
+const CurrentPage = styled.a`
+background-color: #007bff;
+color: #FFF;
+animation: cubic-bezier();
+`
 
 export const BeerContext = createContext(undefined);
 
@@ -23,18 +32,37 @@ export const BeerProvider = (props) => {
             <BeerContext.Provider value={beerData}>
                 {props.children}
             </BeerContext.Provider>
-            <div>
-                <button onClick={() => {
-                    setCurrentPage(currentPage + 1)
-                    setPageNumber(pageNumber + 1)
-                    console.log(pageNumber)
-                }}>Next</button>
-                <button onClick={() => {
-                    setCurrentPage(currentPage - 1)
-                    setPageNumber(pageNumber-1)
-                    console.log(pageNumber)
-                }}>Previous</button>
-            </div>
+            <nav aria-label="Page navigation example">
+                <ul className="pagination">
+                    <li className="page-item"><ButtonStyle className="page-link" onClick={() => {
+                        setCurrentPage(currentPage - 1)
+                        setPageNumber(pageNumber-1)
+                    }}>Previous</ButtonStyle></li>
+
+                    <li className="page-item">
+                        <a className="page-link" href="#">
+                            {pageNumber-1}
+                        </a>
+                    </li>
+
+                    <li className="page-item">
+                        <CurrentPage className="page-link" href="#">
+                            {pageNumber}
+                        </CurrentPage>
+                    </li>
+
+                    <li className="page-item">
+                        <a className="page-link" href="#">
+                            {pageNumber+1}
+                        </a>
+                    </li>
+
+                    <li className="page-item"><ButtonStyle className="page-link" onClick={() => {
+                        setCurrentPage(currentPage + 1)
+                        setPageNumber(pageNumber + 1)
+                    }}>Next</ButtonStyle></li>
+                </ul>
+            </nav>
         </>
     );
 }

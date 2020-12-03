@@ -7,6 +7,8 @@ import Header from "./layout/Header";
 import {BeerProvider} from "./components/BeerContext";
 import BeerOfTheDay from "./components/BeerOfTheDay";
 import SearchedBeer from "./layout/SearchedBeer";
+import BeerCategories from "./layout/BeerCategories";
+import Glass from "./layout/Glass";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
                       <Route path={"/beers"} component={BeerList}/>
                       <Route path={"/beerOfTheDay"} component={BeerOfTheDay}/>
                       <Route path="/result/:beer" component={SearchedBeer}/>
+                      <Route path="/categories" component={BeerCategories}/>
+                      <Route path="/glasses" component={Glass}/>
                   </Router>
               </BeerProvider>
 

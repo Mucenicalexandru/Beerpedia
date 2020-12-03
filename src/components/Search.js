@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import SearchedBeer from "../layout/SearchedBeer";
+import axios from 'axios';
 
 const SearchStyle = styled.nav`
 float: right;
@@ -14,6 +15,10 @@ function Search(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
     }
+
+    useEffect(() =>
+        axios.get(``)
+    )
 
 
     return (
