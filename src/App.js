@@ -5,18 +5,22 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Homepage from "./layout/Homepage";
 import Header from "./layout/Header";
 import {BeerProvider} from "./components/BeerContext";
+import BeerOfTheDay from "./components/BeerOfTheDay";
+import SearchedBeer from "./layout/SearchedBeer";
 
 function App() {
   return (
       <>
-      <BeerProvider>
-          <Router>
-              <Navbar/>
-              <Header/>
-              <Route exact path={"/"} component={Homepage}/>
-              <Route path={"/beers"} component={BeerList}/>
-          </Router>
-      </BeerProvider>
+              <BeerProvider>
+                  <Router>
+                      <Navbar/>
+                      <Header/>
+                      <Route exact path={"/"} component={Homepage}/>
+                      <Route path={"/beers"} component={BeerList}/>
+                      <Route path={"/beerOfTheDay"} component={BeerOfTheDay}/>
+                      <Route path="/result/:beer" component={SearchedBeer}/>
+                  </Router>
+              </BeerProvider>
 
 
 
