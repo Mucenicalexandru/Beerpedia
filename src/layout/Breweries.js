@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from 'axios';
 import {properties} from "../properties";
 import {Link} from "react-router-dom";
+import Facebook from "../components/Facebook";
 
 const TextBlock = styled.div`
   color: #0a0a4c;
@@ -14,8 +15,8 @@ const TextBlock = styled.div`
 
 const BreweriesCard = styled.div`
 margin: 100px;
-background-color: #a8cbcb;
-border-radius: 20px;
+background-color: #d0e8e8;
+border-radius: 10px;
 width: 50%;
 `
 
@@ -38,14 +39,17 @@ function Breweries(props) {
         </TextBlock>
 
             {breweryList.map((brewery) => {
-                return <BreweriesCard className="card">
-                            <h5 className="card-header"><a href={brewery.website}>{brewery.name}</a></h5>
-                            <div className="card-body">
-                                <h3 className="card-text">Established : {brewery.established}</h3>
-                                <p className="card-text">{brewery.description}</p>
-                                <Link to={`/brewery/${brewery.id}/beers`}>See beers produced by {brewery.name}</Link>
-                            </div>
-                    </BreweriesCard>
+                return <div>
+                            <BreweriesCard className="card">
+                                <h5 className="card-header"><a href={brewery.website}>{brewery.name}</a><span style={{fontSize: "15px", float: "right"}}><Facebook breweryId={brewery.id}/></span></h5>
+                                <div className="card-body">
+                                    <h3 className="card-text">Established : {brewery.established}</h3>
+                                    <p className="card-text">{brewery.description}</p>
+                                    <Link to={`/brewery/${brewery.id}/beers`}>See beers produced by {brewery.name}</Link>
+                                </div>
+                            </BreweriesCard>
+
+                        </div>
             })};
 
         </>

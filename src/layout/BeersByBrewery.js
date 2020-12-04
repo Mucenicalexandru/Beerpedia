@@ -1,6 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {properties} from "../properties";
+import styled from "styled-components";
+
+const Beers = styled.div`
+margin: 40px
+`
 
 function BeersByBrewery(props) {
 
@@ -12,12 +17,12 @@ function BeersByBrewery(props) {
             .then(res => {
                 setListOfBeers(res.data.data);
             })
-    }, [beerId])
+    }, [beerId]);
 
 
 
     return (
-        <>
+        <Beers>
             <table className="table">
                 <thead>
                 <tr>
@@ -37,7 +42,7 @@ function BeersByBrewery(props) {
                 })}
                 </tbody>
             </table>
-        </>
+        </Beers>
 
     );
 }
