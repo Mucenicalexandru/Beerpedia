@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components'
 import {Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
-
+const Title = styled.h1`
+align-content: center;
+background-color: palegreen;
+`
 
 function Navbar() {
 
@@ -10,7 +13,7 @@ function Navbar() {
 
     return (
         <>
-            <h1>Title</h1>
+            <Title>Beerpedia</Title>
 
         </>
     );

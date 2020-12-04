@@ -20,12 +20,12 @@ function MoreInfo(props) {
     const [locations, setLocations] = useState([]);
     const socialIcons = ["fa fa-facebook", "fa fa-twitter", "fa fa-stumbleupon"]
 
-    useEffect(() => {
-        axios.get(`https://sandbox-api.brewerydb.com/v2/brewery/${breweryId}/socialaccounts?key=${properties.key}`)
-            .then(res => {
-                setInfo(res.data.data)
-            })
-    }, [breweryId])
+    // useEffect(() => {
+    //     axios.get(`https://sandbox-api.brewerydb.com/v2/brewery/${breweryId}/socialaccounts?key=${properties.key}`)
+    //         .then(res => {
+    //             setInfo(res.data.data)
+    //         })
+    // }, [breweryId])
 
     useEffect(() => {
         axios.get(`https://sandbox-api.brewerydb.com/v2/brewery/${breweryId}/locations?key=${properties.key}`)
@@ -34,16 +34,19 @@ function MoreInfo(props) {
             })
     }, [breweryId])
 
+    const exist = infos.length > 0;
+    console.log(exist)
+
     return (
         <>
+            {/*<div>*/}
+            {/*{infos.map((info, index) => {*/}
+            {/*    return <SocialContainer>*/}
+            {/*                <a href={info.link} id="socialMedia" className={socialIcons[index]}> </a>*/}
+            {/*           </SocialContainer>*/}
+            {/*})}*/}
+            {/*</div>*/}
 
-            <div>
-            {infos.map((info, index) => {
-                return <SocialContainer>
-                            <a href={info.link} id="socialMedia" className={socialIcons[index]}> </a>
-                       </SocialContainer>
-            })}
-            </div>
             <Address>
                 <table className="table">
                     <thead className="thead-dark">
@@ -59,7 +62,7 @@ function MoreInfo(props) {
                         <th scope="col">Type</th>
                         <th scope="col">Year Opened</th>
                         <th scope="col">Timezone</th>
-
+                        <th scope="col">Opening Times</th>
 
                     </tr>
                     </thead>
@@ -77,6 +80,7 @@ function MoreInfo(props) {
                         <td>{location.locationTypeDisplay}</td>
                         <td>{location.yearOpened}</td>
                         <td>{location.timezoneId}</td>
+                        <td>{location.hoursOfOperationNotes}</td>
                     </tr>})}
 
                     </tbody>
