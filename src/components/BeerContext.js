@@ -1,6 +1,7 @@
 import React, {useEffect, useState, createContext, useContext} from 'react';
 import axios from 'axios';
 import styled from "styled-components";
+import {properties} from "../properties";
 
 const ButtonStyle = styled.a`
   cursor: pointer;
@@ -18,7 +19,8 @@ export const BeerProvider = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [beerData, setBeerData] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
-    const key = 'c5e2eaede9eb319adbaf015d9683a2cb';
+    const key = properties.key;
+    const anotherKey = properties.anotherKey;
 
     useEffect(() =>{
         axios.get(`https://sandbox-api.brewerydb.com/v2/beers?key=${key}&p=${currentPage}`)

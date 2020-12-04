@@ -9,6 +9,7 @@ import BeerOfTheDay from "./components/BeerOfTheDay";
 import SearchedBeer from "./layout/SearchedBeer";
 import BeerCategories from "./layout/BeerCategories";
 import Glass from "./layout/Glass";
+import Breweries from "./layout/Breweries";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                       <Route path="/result/:beer" component={SearchedBeer}/>
                       <Route path="/categories" component={BeerCategories}/>
                       <Route path="/glasses" component={Glass}/>
+                      <Route path="/breweries" component={Breweries}/>
                   </Router>
               </BeerProvider>
 

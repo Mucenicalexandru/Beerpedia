@@ -4,6 +4,7 @@ import axios from 'axios';
 import styled from "styled-components";
 import {Col, Container, Row} from 'reactstrap';
 import {Card} from 'react-bootstrap';
+import {properties} from "../properties";
 
 const Image = styled.img`
   position: relative; 
@@ -35,6 +36,8 @@ margin: 20px;
 function Glass(props) {
 
     const [glassList, setGlassList] = useState([]);
+    const key = properties.key;
+    const anotherKey = properties.anotherKey;
 
     let glassDescription = {
         "Goblet" : "The goblet glass has a large, head-retaining round bowl and a thick stem. Chalices are similar, but tend to have thicker bowl walls. Both types can be highly decorative and sometimes feature intricate etching or precious metal inlaying. Their wide mouth design promotes big, hearty sips.",
@@ -49,9 +52,9 @@ function Glass(props) {
     }
 
     useEffect(() => {
-        axios.get('https://sandbox-api.brewerydb.com/v2/menu/glassware?key=c5e2eaede9eb319adbaf015d9683a2cb')
+        axios.get(`https://sandbox-api.brewerydb.com/v2/menu/glassware?key=${key}`)
             .then(res => setGlassList(res.data.data))
-    })
+    }, [])
 
     return (
         <>

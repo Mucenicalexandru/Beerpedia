@@ -22,6 +22,8 @@ function Header(props) {
                     <Button type="button" className="btn btn-outline-primary"><Link to="/beerOfTheDay">Beer of the day</Link></Button>
                     <Button type="button" className="btn btn-outline-primary"><Link to="/categories">Beer Categories</Link></Button>
                     <Button type="button" className="btn btn-outline-primary"><Link to="/glasses">Glassware</Link></Button>
+                    <Button type="button" className="btn btn-outline-primary"><Link to="/breweries">Breweries</Link></Button>
+
                     <Search/>
                 </div>
             </header>
