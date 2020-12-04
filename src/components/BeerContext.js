@@ -19,11 +19,10 @@ export const BeerProvider = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [beerData, setBeerData] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
-    const key = properties.key;
-    const anotherKey = properties.anotherKey;
+
 
     useEffect(() =>{
-        axios.get(`https://sandbox-api.brewerydb.com/v2/beers?key=${key}&p=${currentPage}`)
+        axios.get(`https://sandbox-api.brewerydb.com/v2/beers?key=${properties.key}&p=${currentPage}`)
             .then(res => {
                 setBeerData(res.data.data)
             })

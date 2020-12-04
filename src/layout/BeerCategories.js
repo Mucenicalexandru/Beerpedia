@@ -5,11 +5,9 @@ import {properties} from "../properties";
 function BeerCategories(props) {
 
     const [categoryList, setCategoryList] = useState([]);
-    const key = properties.key;
-    const anotherKey = properties.anotherKey;
 
     useEffect(() =>{
-        axios.get(`https://sandbox-api.brewerydb.com/v2/menu/categories?key=${key}`)
+        axios.get(`https://sandbox-api.brewerydb.com/v2/menu/categories?key=${properties.key}`)
             .then(res => setCategoryList(res.data.data))
     }, [])
 

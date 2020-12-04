@@ -36,8 +36,6 @@ margin: 20px;
 function Glass(props) {
 
     const [glassList, setGlassList] = useState([]);
-    const key = properties.key;
-    const anotherKey = properties.anotherKey;
 
     let glassDescription = {
         "Goblet" : "The goblet glass has a large, head-retaining round bowl and a thick stem. Chalices are similar, but tend to have thicker bowl walls. Both types can be highly decorative and sometimes feature intricate etching or precious metal inlaying. Their wide mouth design promotes big, hearty sips.",
@@ -52,7 +50,7 @@ function Glass(props) {
     }
 
     useEffect(() => {
-        axios.get(`https://sandbox-api.brewerydb.com/v2/menu/glassware?key=${key}`)
+        axios.get(`https://sandbox-api.brewerydb.com/v2/menu/glassware?key=${properties.key}`)
             .then(res => setGlassList(res.data.data))
     }, [])
 

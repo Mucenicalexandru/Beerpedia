@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import axios from 'axios';
 import {properties} from "../properties";
+import {Link} from "react-router-dom";
 
 const TextBlock = styled.div`
   color: #0a0a4c;
@@ -11,14 +12,19 @@ const TextBlock = styled.div`
   border: #c6c1c1 solid 1px;
 `
 
+const BreweriesCard = styled.div`
+margin: 100px;
+background-color: #a8cbcb;
+border-radius: 20px;
+width: 50%;
+`
+
 function Breweries(props) {
 
     const [breweryList, setBreweryList] = useState([]);
-    const key = properties.key;
-    const anotherKey = properties.anotherKey;
 
     useEffect(() => {
-        axios.get(`https://sandbox-api.brewerydb.com/v2/breweries?key=${key}`)
+        axios.get(`https://sandbox-api.brewerydb.com/v2/breweries?key=${properties.key}`)
             .then(res => {
                 setBreweryList(res.data.data);
             })
@@ -32,14 +38,14 @@ function Breweries(props) {
         </TextBlock>
 
             {breweryList.map((brewery) => {
-                return <div className="card">
-                            <h5 className="card-header">{brewery.name}</h5>
+                return <BreweriesCard className="card">
+                            <h5 className="card-header"><a href={brewery.website}>{brewery.name}</a></h5>
                             <div className="card-body">
-                                <h5 className="card-title">{brewery.website}</h5>
+                                <h3 className="card-text">Established : {brewery.established}</h3>
                                 <p className="card-text">{brewery.description}</p>
-                                <p className="card-text">Established : {brewery.established}</p>
+                                <Link to={`/brewery/${brewery.id}/beers`}>See beers produced by {brewery.name}</Link>
                             </div>
-                    </div>
+                    </BreweriesCard>
             })};
 
         </>
