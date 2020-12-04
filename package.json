@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "axios": "^0.21.0",
     "http-proxy-middleware": "^1.0.6",
     "react-router-dom": "^5.2.0",

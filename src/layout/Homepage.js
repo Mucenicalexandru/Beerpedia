@@ -8,14 +8,7 @@ const Image = styled.img`
     height: 60%;
 `
 
-const Text = styled.div`
-  margin: 50px 50px 50px 0;
-  display: inline;
-`
 
-const Container = styled.div`
-  max-width: 2000px;
-`
 
 
 function Homepage(props) {
@@ -38,5 +31,13 @@ function Homepage(props) {
         </>
     );
 }
+const Text = styled.div`
+  margin: 110px 50px 50px 0;
+  display: inline;
+ 
+`
 
+const Container = styled.div`
+  max-width: 2000px;
+`
 export default Homepage;

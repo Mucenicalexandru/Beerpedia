@@ -1,5 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import styled from "styled-components";
+import {properties} from "../properties";
+
+
+const Title = styled.h1`
+text-align: center;
+margin-top: 50px;
+`
+const Description = styled.p`
+margin: 50px;
+`
 
 function BeerOfTheDay(props) {
 
@@ -7,17 +18,18 @@ function BeerOfTheDay(props) {
 
 
     useEffect(() => {
-        axios.get(`https://sandbox-api.brewerydb.com/v2/beer/random?key=c5e2eaede9eb319adbaf015d9683a2cb`)
+        axios.get(`https://sandbox-api.brewerydb.com/v2/beer/random?key=${properties.key}`)
             .then(res => {
                 setBeerOfTheDay(res.data.data);
             })
     }, []);
 
+
     return (
         <>
-            <h1>{beerOfTheDay.name}</h1>
-            <h1>{beerOfTheDay.description}</h1>
-            <h2>{beerOfTheDay.success}</h2>
+            <Title>{beerOfTheDay.name}</Title>
+            {/*<Description>{beerOfTheDay.style.description}</Description>*/}
+            {/*<h2>{beerOfTheDay.id}</h2>*/}
         </>
     );
 }
