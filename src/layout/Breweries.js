@@ -14,10 +14,20 @@ const TextBlock = styled.div`
 `
 
 const BreweriesCard = styled.div`
-margin: 100px;
+margin-left: 200px;
+margin-bottom: 100px;
 background-color: #d0e8e8;
 border-radius: 10px;
-width: 50%;
+width: 75%;
+`
+
+const Image = styled.img`
+margin-right: 20px;
+width: 25%;
+`
+
+const CardHeader = styled.h5`
+background-color: #c2e5e5;;
 `
 
 function Breweries(props) {
@@ -39,17 +49,24 @@ function Breweries(props) {
         </TextBlock>
 
             {breweryList.map((brewery) => {
-                return <div>
+                for (let key in brewery.images){
+                    if(key==="medium"){
+                        return <div style={{display: "inline"}}>
                             <BreweriesCard className="card">
-                                <h5 className="card-header"><a href={brewery.website}>{brewery.name}</a><span style={{fontSize: "15px", float: "right"}}><Facebook breweryId={brewery.id}/></span></h5>
+                                <CardHeader className="card-header"><Image src={brewery.images[key]} alt="image"/><a href={brewery.website}>{brewery.name}</a><span style={{fontSize: "15px", float: "right"}}><Facebook breweryId={brewery.id}/></span></CardHeader>
                                 <div className="card-body">
                                     <h3 className="card-text">Established : {brewery.established}</h3>
                                     <p className="card-text">{brewery.description}</p>
                                     <Link to={`/brewery/${brewery.id}/beers`}>See beers produced by {brewery.name}</Link>
+
                                 </div>
+
                             </BreweriesCard>
 
                         </div>
+                    }
+                }
+
             })};
 
         </>
