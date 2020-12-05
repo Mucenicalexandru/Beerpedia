@@ -1,3 +1,18 @@
+# Beerpedia - a website for practicing React JS with Hooks and consuming REST APIs with Axios
+
+# Screenshots
+
+![alt text](public/images/homepage.png?raw=true)
+![alt text](public/images/beerList.png?raw=true)
+![alt text](public/images/glassware.png?raw=true)
+![alt text](public/images/breweries.png?raw=true)
+![alt text](public/images/brewery_info.png?raw=true)
+![alt text](public/images/beersByBrewery.png?raw=true)
+![alt text](public/images/categories.png?raw=true)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
