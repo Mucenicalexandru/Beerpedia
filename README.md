@@ -1,4 +1,10 @@
-# Beerpedia - a website for practicing React JS with Hooks, Styled Components and consuming REST APIs with Axios
+# Beerpedia
+
+A website about breweries and beers, for practicing React JS with Hooks, Styled Components and consuming REST APIs with Axios from https://www.brewerydb.com/<br/><br/>
+  Written in IntelliJ WebStorm<br/>
+  Github for code management<br/>
+  Front-end : React JS with Hooks, Styled Components, HTML, CSS, Bootstrap<br/>
+  Project management tool : NPM<br/>
 
 # Screenshots
 
